@@ -115,7 +115,7 @@ class YoloDetectorNode(Node):
                 if true_distance_mm > 0:
                     true_distance_m = true_distance_mm / 1000.0
                     
-                    # --- CaLCULO DA POSIcaO RELATIVA 3D ---
+                    # --- CALCULO DA POSICAO RELATIVA 3D ---
                     fx, fy = self.camera_matrix[0, 0], self.camera_matrix[1, 1]
                     cam_cx, cam_cy = self.camera_matrix[0, 2], self.camera_matrix[1, 2]
 
