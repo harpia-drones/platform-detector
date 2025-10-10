@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>platform_detector</name>
+  <name>YOLO_detector</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="harpia.edu@gmail.com">root</maintainer>
@@ -15,4 +15,9 @@
   <export>
     <build_type>ament_python</build_type>
   </export>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>detection_interface</exec_depend>
+  <exec_depend>ultralytics</exec_depend>
 </package>

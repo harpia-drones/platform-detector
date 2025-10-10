@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'platform_detector'
+package_name = 'YOLO_detector'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'yolo_detector = platform_detector.yolo_detector:main'
+            'detection = YOLO_detector.YOLO:main'
         ],
     },
 )
