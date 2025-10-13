@@ -46,7 +46,7 @@ class YOLO_detector(Node):
         self.get_logger().info(f"Publishing to: '{self.detection_output_topic}'")
 
         # Load algorithm parameters
-        self.declare_parameter('model_path', 'models/best8.pt')
+        self.declare_parameter('model_path', '/root/harpia_ws/src/yolo_detector/models/best8.pt')
         self.declare_parameter('confidence_threshold', 0.90)
         self.model_path = self.get_parameter('model_path').get_parameter_value().string_value
         self.confidence_threshold = self.get_parameter('confidence_threshold').get_parameter_value().double_value
