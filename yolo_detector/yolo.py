@@ -60,11 +60,7 @@ class YOLO_detector(Node):
             return []
 
         # Run inference
-        results = self.model.predict(source=frame, conf=self.confidence_threshold)
-
-
-        self.get_logger().info(f"Classes do modelo: {self.model.names}")
-        self.get_logger().info(f"Shape da imagem: {frame.shape}")
+        results = self.model.predict(source=frame, conf=self.confidence_threshold, verbose=False)
 
         # Process and draw detections
         platforms = []
@@ -77,7 +73,7 @@ class YOLO_detector(Node):
                     class_id = int(box.cls[0].cpu().numpy())
                     class_name = self.model.names[class_id]
 
-                    #self.get_logger().info(f"Object detected: {class_name}, : {confidence:.2f}")
+                    self.get_logger().debug(f"Object detected: {class_name}, : {confidence:.2f}")
 
                     xyxy = box.xyxy[0].cpu().numpy().astype(int)
                     x1, y1, x2, y2 = xyxy
